@@ -1,0 +1,100 @@
+body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container {
+      background: linear-gradient(to bottom right, #ffffff, #f0f9ff);
+      border-radius: 25px;
+      padding: 50px 30px;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 90%;
+      max-width: 850px;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .header img {
+      width: 110px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #6a1b9a;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #4a4a4a;
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      font-size: 1.0rem;
+      color: #46052e;
+      margin-bottom: 25px;
+    }
+
+    a.map-link {
+      display: inline-block;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    a.map-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    a.map-link img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 3px solid #ba68c8;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 1.1rem;
+      color: #6d6d6d;
+    }
+
+    .footer p::before {
+      content: "🚻 ";
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container,
+    .header img,
+    h1,
+    h2,
+    .map-link,
+    .footer {
+      animation: fadeUp 1s ease forwards;
+    }

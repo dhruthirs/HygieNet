@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Toilet in Tumkur</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Smart Toilet in TUMKUR</h1>
+    <div id="map"></div>
+
+    <!-- Load Leaflet -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Load the secret file (NOT pushed to GitHub) -->
+    <script src="config.js"></script>
+
+    <script>
+        // Create the map centered on Tumkur, India
+        var map = L.map('map').setView([13.32694494127339, 77.12621834744543], 13);
+
+        // Add the tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add a marker
+        var marker = L.marker([13.32694494127339, 77.12621834744543]).addTo(map)
+            .bindPopup("<b>Smart Toilet in Tumkur</b><br><a href='#' id='blynk-link' target='_blank'>Go to Dashboard</a>");
+
+        // When marker is clicked → open secret link
+        marker.on('click', function () {
+            window.open(BLYNK_URL, "_blank");
+        });
+
+        // If user clicks inside popup link
+        document.addEventListener("click", function (e) {
+            if (e.target && e.target.id === "blynk-link") {
+                e.preventDefault();
+                window.open(BLYNK_URL, "_blank");
+            }
+        });
+    </script>
+
+</body>
+</html>
